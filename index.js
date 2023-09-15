@@ -40,7 +40,7 @@ server.post("/login", (req, res, next)=>{
     return res.status(500),json({mesagem : "Usuario ou senha incorretos"})
 })
 
-server.get("/produtos", verificaTokenJWT, async (req, res) => {
+server.get("/produtos", async (req, res) => {
     
     try {
         const produtos = await Produto.find()
