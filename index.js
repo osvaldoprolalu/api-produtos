@@ -7,9 +7,6 @@ const server = express()
 const Database = require("./Database.js")
 const Produto = require("./Produtos.js")
 
-const ProdutosServico = require("./produtosServico.ts")
-const produtosServico = new ProdutosServico()
-
 server.use(express.json())
 
 server.get("/", (req, res) => {
