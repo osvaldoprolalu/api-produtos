@@ -12,6 +12,10 @@ const produtosServico = new ProdutosServico()
 
 server.use(express.json())
 
+server.get("/", (req, res) => {
+    return res.status(200).send("Bem-vindo")
+})
+
 function verificaTokenJWT(req, res, next){
     const token = req.headers['x-access-token'];
 
