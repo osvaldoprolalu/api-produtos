@@ -1,6 +1,3 @@
-SECRET = "neto123"
-const jwt = require("jsonwebtoken")
-
 const express = require("express")
 const server = express()
 
