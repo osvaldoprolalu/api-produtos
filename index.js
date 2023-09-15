@@ -13,19 +13,6 @@ server.get("/", (req, res) => {
     return res.status(200).send("Bem-vindo")
 })
 
-function verificaTokenJWT(req, res, next){
-    const token = req.headers['x-access-token'];
-
-    if(!token) return res.status(401).send("Você não tem permissão para acessar")
-
-    jwt.verify(token, SECRET, function(err, decoded) {
-        if(err) return res.send("Houve algum erro ao validar o token")
-
-        req.usuarioId = decoded.id;
-        next()
-    })
-}
-
 server.post("/login", (req, res, next)=>{
     if(req.body.usuario === "neto" && req.body.senha === "123"){
         //id do usuario logado
